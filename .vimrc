@@ -20,6 +20,7 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'scrooloose/nerdtree'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'liuchengxu/vim-which-key'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -27,6 +28,13 @@ filetype plugin indent on    " required
 
 " Default key maps
 let mapleader = " " " map leader to Space
+
+nnoremap <S-t> :tabnew<cr>
+nnoremap <S-n> :tabn<cr>
+nnoremap <S-p> :tabp<cr>
+nnoremap <S-w> :tabc<cr>
+
+nnoremap <C-n> :set number!<cr>
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -55,9 +63,9 @@ set encoding=utf-8
 " Jedi Auto-Complete setting
 let g:jedi#auto_initialization = 1
 let g:jedi#use_tabs_not_buffers = 1
-let g:jedi#use_splits_not_buffers = "right"
+"let g:jedi#use_splits_not_buffers = "right"
 " Load rope plugin
-let g:pymode_folding=0
+let g:pymode_folding=1
 
 
 
@@ -65,10 +73,18 @@ let python_highlight_all=1
 syntax on
 
 " NERDTree key maps
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
+"nnoremap <leader>n :NERDTreeFocus<CR>
+"nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+"nnoremap <C-f> :NERDTreeFind<CR>
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
+" Which key setting
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+
+"nnoremap <F5> :terminal python -m pdb %<space><CR>
+nnoremap <F5> :terminal bash -c "read -p arguments? arguments; python -m pdb %<space>$arguments"
+nnoremap <F8> ibreakpoint()<Esc>
+nnoremap <F9> :/breakpoint()<cr>
+iab brk breakpoint()
