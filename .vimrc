@@ -21,6 +21,9 @@ Plugin 'nvie/vim-flake8'
 Plugin 'scrooloose/nerdtree'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'liuchengxu/vim-which-key'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'zacanger/angr.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -88,3 +91,5 @@ nnoremap <F5> :terminal bash -c "read -p arguments? arguments; python -m pdb %<s
 nnoremap <F8> ibreakpoint()<Esc>
 nnoremap <F9> :/breakpoint()<cr>
 iab brk breakpoint()
+
+color happy_hacking
