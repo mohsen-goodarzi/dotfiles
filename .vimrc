@@ -23,8 +23,8 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'liuchengxu/vim-which-key'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'zacanger/angr.vim'
 Plugin 'yorickpeterse/happy_hacking.vim'
+Plugin 'NLKNguyen/papercolor-theme'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -93,4 +93,9 @@ nnoremap <F8> ibreakpoint()<Esc>
 nnoremap <F9> :/breakpoint()<cr>
 iab brk breakpoint()
 
-color happy_hacking
+" Theme
+syntax enable
+set t_Co=256
+
+set background=dark " for the dark version
+colorscheme PaperColor
