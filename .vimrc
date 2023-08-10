@@ -98,4 +98,15 @@ syntax enable
 set t_Co=256
 
 set background=dark " for the dark version
+let g:python_highlight_all = 1
+
+let g:PaperColor_Theme_Options = {
+  \   'theme': {
+  \     'default.dark': {
+  \       'transparent_background': 1
+  \     }
+  \   }
+  \ }
+
+let g:airline_theme='papercolor'
 colorscheme PaperColor
